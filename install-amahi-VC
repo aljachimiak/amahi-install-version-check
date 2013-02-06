@@ -19,14 +19,17 @@ then
 fi
 
 ########### Here is the new Code #############
-
+### This code is currently being tested.   ###
+##############################################
 VERSION=`cat /etc/issue | sed 's/[^0-9]*//g'`   
 
-#echo $VERSION
+echo $VERSION
 
 if [ "$VERSION"  = "12041" ];  then
-    echo "Ubuntu 12.04 LTS detected.  Amahi install may continue."
-  elif [ "$VERSION" != "12041" ]; then
+    echo "Ubuntu 12.04.1 LTS detected.  Amahi install may continue."
+  elif [ "$VERSION" = "1204"]; then
+  	echo "Ubuntu 12.04 LTS detected.  Amahi install may continue."
+  elif [ "$VERSION" != "12041" || "$VERSION" != "1204" ]; then
     echo "We're going to have to stop here.  Amahi is supported only on Ubuntu 12.04 LTS."
     exit
 fi
