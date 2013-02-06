@@ -23,9 +23,13 @@ fi
 ##############################################
 VERSION=`cat /etc/issue | sed 's/[^0-9]*//g'`   
 
-echo $VERSION
+#echo $VERSION
 
-if [ "$VERSION"  = "12041" ] || [ "$VERSION" = "1204" ];  then
+VERSION_SHRT=$(echo $VERSION | awk '{ string = substr($0, 1, 4); print string; }')
+
+#echo $VERSION_SHRT
+
+if [ "$VERSION_SHRT" = "1204" ]; then
     echo "Ubuntu LTS detected.  Amahi install may continue."
   else 
     echo "We're going to have to stop here.  Amahi is supported only on Ubuntu 12.04 LTS."
