@@ -19,11 +19,9 @@ then
 fi
 
 ########### Here is the new Code #############
-### This code is currently being tested.   ###
+###     Tested in 12.04 and 12.04.1        ###
 ##############################################
 VERSION=`cat /etc/issue | sed 's/[^0-9]*//g'`   
-
-echo $VERSION
 
 if [ "$VERSION"  = "12041" ] || [ "$VERSION" = "1204" ];  then
     echo "Ubuntu LTS detected.  Amahi install may continue."
